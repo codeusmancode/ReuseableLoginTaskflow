@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="login-tf">
+    <default-activity>loginView</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <return-value-definition id="__2">
+      <name>status</name>
+      <value>#{pageFlowScope.status}</value>
+      <class>java.lang.Integer</class>
+    </return-value-definition>
+    <return-value-definition id="__1">
+      <name>username</name>
+      <value>#{pageFlowScope.username}</value>
+      <class>java.lang.String</class>
+    </return-value-definition>
+    <managed-bean id="__5">
+      <managed-bean-name>LoginBean</managed-bean-name>
+      <managed-bean-class>view.Login</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <view id="loginView">
+      <page>/loginView.jsff</page>
+    </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome>
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__3">
+      <from-activity-id>loginView</from-activity-id>
+      <control-flow-case id="__4">
+        <to-activity-id>taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

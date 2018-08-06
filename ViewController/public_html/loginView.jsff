@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelGroupLayout id="pgl1" layout="vertical">
+    <af:panelGroupLayout id="pgl2" styleClass="AFStretchWidth" layout="vertical"
+                         inlineStyle="background-color:#00688B;">
+      <af:outputText value="Login" id="ot1" inlineStyle="color:white; font-size:17px;"/>
+    </af:panelGroupLayout>
+    <af:panelStretchLayout id="psl1" startWidth="33%" endWidth="33%" topHeight="33%" bottomHeight="33%">
+      <f:facet name="start"/>
+      <f:facet name="end"/>
+      <f:facet name="top">
+        <af:panelGroupLayout id="pgl5"/>
+      </f:facet>
+      <f:facet name="bottom">
+        <af:panelGroupLayout id="pgl4"/>
+      </f:facet>
+      <f:facet name="center">
+        <af:panelGroupLayout id="pgl3" layout="vertical" halign="center">
+          <af:panelFormLayout id="pfl1" rows="2" maxColumns="1">
+            <f:facet name="footer"/>
+            <af:inputText label="Username" id="it1" value="#{LoginBean.username}" autoSubmit="true"/>
+            <af:inputText label="Password" id="it2" value="#{LoginBean.password}" autoSubmit="true" secret="true"/>
+            <af:button text="Login" id="b1" action="#{LoginBean.login}"/>
+          </af:panelFormLayout>
+        </af:panelGroupLayout>
+      </f:facet>
+    </af:panelStretchLayout>
+  </af:panelGroupLayout>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:LoginBean-->
+</ui:composition>
